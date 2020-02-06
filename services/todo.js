@@ -1,0 +1,7 @@
+
+class Todo {
+
+    constructor(db) {
+
+    }
+}

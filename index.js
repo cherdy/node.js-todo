@@ -7,7 +7,6 @@ const express = require('express'),
 const port = 3000,
     host = '127.0.0.1';
 
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
@@ -17,6 +16,7 @@ try {
     for (const name in controllers) {
         app.use(`/${name}`, controllers[name](router))
     }
+
 } catch (e) {
     console.log(e)
 }
