@@ -12,15 +12,15 @@ class TodoValidator {
 
     add(payload) {
         if(!payload) {
-            throw ValidationError('payload', '"payload" is required');
+            throw ValidationError('payload', "'payload' is required");
         }
 
         if(!payload.name) {
-            throw ValidationError('name', '"name" is required');
+            throw ValidationError('name', "'name' is required");
         }
 
         if(!payload.description) {
-            throw ValidationError('description', '"description" is required');
+            throw ValidationError('description', "'description' is required");
         }
 
         return _.pick(payload, todoFields);
@@ -28,11 +28,11 @@ class TodoValidator {
 
     delete(payload) {
         if(!payload) {
-            throw ValidationError('payload', '"payload" is required');
+            throw ValidationError('payload', "'payload' is required");
         }
 
         if(!payload._id) {
-            throw ValidationError('_id', '"_id" is required');
+            throw ValidationError('_id', "'_id' is required");
         }
 
         return payload._id;
@@ -40,7 +40,7 @@ class TodoValidator {
 
     update(payload) {
         if(!payload.payload) {
-            throw ValidationError('payload', '"payload" is required');
+            throw ValidationError('payload', "'payload' is required");
         }
 
         if(!payload._id) {
@@ -52,7 +52,7 @@ class TodoValidator {
 
     get(payload) {
         if(!payload) {
-            throw ValidationError('payload', '"payload" is required');
+            throw ValidationError('payload', "'payload' is required");
         }
 
         if(!payload._id) {
