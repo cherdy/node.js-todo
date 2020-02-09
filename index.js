@@ -15,7 +15,6 @@ const connectionDbUrl = 'mongodb://localhost:27017/',
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
-
 app.use(jwt.checkAuth);
 
 async function runServer() {
