@@ -1,11 +1,6 @@
 const ValidationError = require('../validator/ValidationError');
 const _ = require('lodash');
-authFields = [
-    'login',
-    'password',
-    'name',
-    '_id'
-];
+const {AuthFields} = require('../models/auth');
 
 class AuthValidator {
 
@@ -26,7 +21,7 @@ class AuthValidator {
             throw ValidationError('name', "'name' is required");
         }
 
-        return _.pick(payload, authFields)
+        return _.pick(payload, AuthFields)
     }
 
     signIn(payload) {
@@ -42,7 +37,7 @@ class AuthValidator {
             throw ValidationError('password', "'password' is required");
         }
 
-        return _.pick(payload, authFields)
+        return _.pick(payload, AuthFields)
     }
 
 }

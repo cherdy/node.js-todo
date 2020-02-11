@@ -1,12 +1,6 @@
 const ValidationError = require('../validator/ValidationError');
 const _ = require('lodash');
-todoFields = [
-    'name',
-    'description',
-    'createdAt',
-    'editedAt',
-    'isDone',
-];
+const {TodoFields} = require('../models/todo');
 
 class TodoValidator {
 
@@ -23,7 +17,7 @@ class TodoValidator {
             throw ValidationError('description', "'description' is required");
         }
 
-        return _.pick(payload, todoFields);
+        return _.pick(payload, TodoFields);
     }
 
     delete(payload) {
@@ -47,7 +41,7 @@ class TodoValidator {
             throw ValidationError('_id', '"_id" is required');
         }
 
-        return _.pick(payload.payload, todoFields);
+        return _.pick(payload.payload, TodoFields);
     }
 
     get(payload) {
