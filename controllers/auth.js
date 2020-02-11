@@ -1,10 +1,10 @@
-const authActions = require('../actions/auth').authAction;
+const {authAction} = require('../actions/auth');
 
 module.exports = (router) => {
     const routes = router();
 
-    routes.post('/', authActions.signUp);
-    routes.get('/', authActions.signIn);
+    routes.post('/', authAction.signUp);
+    routes.get('/', authAction.signIn);
 
     return routes;
 };

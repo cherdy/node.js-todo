@@ -1,7 +1,6 @@
-const authValidator = require('../validators/auth').authValidator,
+const {authValidator} = require('../validators/auth'),
     responseCode = require('http-status-codes'),
-    objectId = require("mongodb").ObjectID,
-    jwt = require('../utils/jwt').jwt,
+    {jwt} = require('../utils/jwt'),
     _ = require('lodash'),
     {User} = require('../models/user');
 

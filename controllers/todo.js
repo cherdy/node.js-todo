@@ -1,4 +1,4 @@
-const todoActions = require('../actions/todo').todoAction,
+const {todoAction} = require('../actions/todo'),
     {userRequired} = require('../utils/user-required');
 
 module.exports = (router) => {
@@ -6,10 +6,10 @@ module.exports = (router) => {
 
     routes.use(userRequired);
 
-    routes.post('/', todoActions.add);
-    routes.delete('/', todoActions.delete);
-    routes.put('/', todoActions.update);
-    routes.get('/', todoActions.get);
+    routes.post('/', todoAction.add);
+    routes.delete('/', todoAction.delete);
+    routes.put('/', todoAction.update);
+    routes.get('/', todoAction.get);
 
     return routes;
 };

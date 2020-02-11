@@ -1,6 +1,6 @@
-const todoValidator = require('../validators/todo').todoValidator,
+const {todoValidator} = require('../validators/todo'),
     responseCode = require('http-status-codes'),
-    objectId = require("mongodb").ObjectID;
+    {ObjectID} = require("mongodb");
 
 class TodoAction {
 
@@ -23,7 +23,7 @@ class TodoAction {
     async delete(req, res) {
         try {
             const validId = todoValidator.delete(req.body),
-                _id = objectId(validId),
+                _id = ObjectID(validId),
                 userID = req.user._id;
 
             const collection = req.app.locals.dataBase.collection('todoList');
@@ -39,7 +39,7 @@ class TodoAction {
     async update(req, res) {
         try {
             const validData = todoValidator.update(req.body),
-                _id = objectId(req.body._id),
+                _id = ObjectID(req.body._id),
                 userID = req.user._id;
 
             const collection = req.app.locals.dataBase.collection('todoList');
@@ -60,7 +60,7 @@ class TodoAction {
     async get(req, res) {
         try {
             const validId = todoValidator.get(req.body),
-                _id = objectId(validId),
+                _id = ObjectID(validId),
                 userID = req.user._id;
 
             const collection = req.app.locals.dataBase.collection('todoList');

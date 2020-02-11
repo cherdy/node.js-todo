@@ -1,4 +1,4 @@
-const objectId = require("mongodb").ObjectID,
+const {ObjectID} = require("mongodb"),
     jwt = require('jsonwebtoken');
 
 const jwtTokenKey = '1a2b-3c4d-5e6f-7g8h';
@@ -16,7 +16,7 @@ class Jwt {
                 }
 
                 const collection = req.app.locals.dataBase.collection('users'),
-                    _id = objectId(payload.id);
+                    _id = ObjectID(payload.id);
 
                 req.user = await collection.findOne({_id});
 

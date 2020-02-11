@@ -3,8 +3,8 @@ const express = require('express'),
     inject = require('require-all'),
     router = express.Router,
     bodyParser = require('body-parser'),
-    MongoClient = require("mongodb").MongoClient,
-    jwt = require('./utils/jwt').jwt;
+    {MongoClient} = require("mongodb"),
+    {jwt} = require('./utils/jwt');
 
 
 const portServer = 3000,
